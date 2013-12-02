@@ -16,7 +16,9 @@
   "licenses": "MIT",
   "spm": {
     "output": ["spassword.js"],
-    "alias": {},
+    "alias": {
+      "events": "arale/events/1.1.0/events"
+    },
     "devAlias": {},
     "engines": {}
   }
