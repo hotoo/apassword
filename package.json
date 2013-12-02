@@ -1,0 +1,23 @@
+{
+  "family": "alipay",
+  "name": "spassword",
+  "version": "1.0.0",
+  "description": "The best project ever.",
+  "homepage": "https://github.com/hotoo/spassword",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hotoo/spassword.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": ["widget"],
+  "licenses": "MIT",
+  "spm": {
+    "output": ["spassword.js"],
+    "alias": {},
+    "devAlias": {},
+    "engines": {}
+  }
+}
