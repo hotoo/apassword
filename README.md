@@ -4,6 +4,8 @@
 
 支付宝无线端密码组件。
 
+![snipshot](snipshot.png)
+
 ---
 
 ## 使用说明
