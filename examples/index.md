@@ -20,4 +20,6 @@ seajs.use('spassword', function(spassword){
 });
 ````
 
-![扫描二维码访问当前页面](example-url.png)
+扫描二维码访问当前页面
+
+![二维码](example-url.png)
