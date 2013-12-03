@@ -1,0 +1,27 @@
+{
+  "family": "arale",
+  "name": "spassword",
+  "version": "1.0.0",
+  "description": "Alipay security password module.",
+  "homepage": "https://github.com/hotoo/spassword",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hotoo/spassword.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hotoo/spassword/issues"
+  },
+  "keywords": ["widget"],
+  "licenses": "MIT",
+  "spm": {
+    "output": ["spassword.js"],
+    "alias": {
+      "jquto": "handy/jquto/1.0.0/jquto",
+      "zepto": "zepto/zepto/1.0.0/zepto",
+      "events": "arale/events/1.1.0/events"
+    },
+    "devAlias": {},
+    "engines": {}
+  }
+}
