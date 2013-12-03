@@ -62,3 +62,9 @@ seajs.use("spassword", function(spassword){
 ### blur
 
 密码控件失去焦点时触发 `blur` 事件。
+
+
+## 参考
+
+* [Controlling which iOS keyboard is shown](http://sja.co.uk/2012/1/4/controlling-which-ios-keyboard-is-shown)
+* [Managing the Keyboard](https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html)
