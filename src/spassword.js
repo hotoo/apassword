@@ -34,11 +34,7 @@ define(function(require, exports, module) {
 
       var points = $("b", this._mo);
 
-      this._element.css({
-        "position": "absolute",
-        "left": "-1000px"
-        //"top": this._element.css("top")
-      }).on("keyup", function(){
+      this._element.addClass("spassword").on("keyup", function(){
 
         var len = ME._element.val().length;
 
