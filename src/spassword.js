@@ -1,7 +1,8 @@
 define(function(require, exports, module) {
 
   require("./spassword.css");
-  var $ = require("$");
+
+  var $ = require("zepto");
   var Events = require("events");
 
   var DEFAULT_LENGTH = 6;
@@ -22,7 +23,6 @@ define(function(require, exports, module) {
   spassword.prototype = {
     render: function(){
       var ME = this;
-      var _lastLength = this._element.val().length;
 
       if(!this._mo){
         this._mo = $('<div class="spassword" tabIndex="0">' +
@@ -36,20 +36,16 @@ define(function(require, exports, module) {
 
       this._element.css({
         "position": "absolute",
-        "left": "-1000px",
-        "top": "-1000px"
+        "left": "-1000px"
+        //"top": this._element.css("top")
       }).on("keyup", function(evt){
 
         var len = ME._element.val().length;
-        if(_lastLength > len){
-          $("b", this._mo).css({
-            "visibility": "hidden"
+        $("b", this._mo).each(function(index){
+          $(this).css({
+            "visibility": index < len ? "visible" : "hidden"
           });
-        }
-        $("b:lt("+len+")", this._mo).css({
-          "visibility": "visible"
         });
-        _lastLength = len;
 
         var val = ME._element.val();
 
@@ -60,14 +56,18 @@ define(function(require, exports, module) {
         }
 
       }).on("focus", function(){
+        ME._mo.addClass("active");
         ME._event.trigger("focus");
       }).on("blur", function(){
+        ME._mo.removeClass("active");
         ME._event.trigger("blur");
       }).after(this._mo);
 
       this._mo.css({
         "cursor": "text"
       }).focus(function(){
+        ME._element.focus();
+      }).click(function(){
         ME._element.focus();
       });
 
