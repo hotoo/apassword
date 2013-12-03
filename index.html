@@ -153,14 +153,20 @@ jquery/jquery/1.7.2/jquery.js"></script>
 <p><img src="snipshot.png" alt="snipshot"/></p>
 
 <hr/>
-<h2 id="使用说明">使用说明<a href="#使用说明" class="anchor">¶</a></h2><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">class</span>=<span class="value">"spassword"</span> /&gt;</span>
+<h2 id="使用说明">使用说明<a href="#使用说明" class="anchor">¶</a></h2>
+<ul>
+<li><code>maxlength</code> 定义了密码长度，默认长度为 6。</li>
+<li>为了表单校验，建议同时设置 <code>minlength</code>。</li>
+<li>可以通过 <code>patterm</code> 和 <code>type</code> 属性控制键盘响应。</li>
+</ul>
+<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">class</span>=<span class="value">"spassword"</span>
+    <span class="attribute">pattern</span>=<span class="value">"\d*"</span>
+    <span class="attribute">minlength</span>=<span class="value">"6"</span> <span class="attribute">maxlength</span>=<span class="value">"6"</span> /&gt;</span>
 
 <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
 seajs.use(<span class="string">"arale/spassword/1.0.0/spassword"</span>, <span class="function"><span class="keyword">function</span><span class="params">(spassword)</span>{</span>
 
-  <span class="keyword">var</span> spwd = <span class="keyword">new</span> spassword(<span class="string">"#spwd"</span>, {
-    length: <span class="number">6</span>
-  }).on(<span class="string">"complete"</span>, <span class="function"><span class="keyword">function</span><span class="params">(value)</span>{</span>
+  <span class="keyword">var</span> spwd = <span class="keyword">new</span> spassword(<span class="string">"input.spassword"</span>).on(<span class="string">"complete"</span>, <span class="function"><span class="keyword">function</span><span class="params">(value)</span>{</span>
     alert(value);
   });
 
@@ -176,8 +182,6 @@ seajs.use(<span class="string">"arale/spassword/1.0.0/spassword"</span>, <span c
 <p>让密码控件失去焦点，该行为会隐藏键盘。</p>
 <h2 id="events">Events<a href="#events" class="anchor">¶</a></h2><h3 id="complete">complete<a href="#complete" class="anchor">¶</a></h3>
 <p>指定位数的密码输入完成时，触发 <code>complete</code> 事件。</p>
-<h3 id="input">input<a href="#input" class="anchor">¶</a></h3>
-<p>输入过程中触发 <code>input</code> 事件。</p>
 <h3 id="focus">focus<a href="#focus" class="anchor">¶</a></h3>
 <p>密码控件活动焦点时触发 <code>focus</code> 事件。</p>
 <h3 id="blur">blur<a href="#blur" class="anchor">¶</a></h3>

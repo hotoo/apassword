@@ -152,23 +152,32 @@ jquery/jquery/1.7.2/jquery.js"></script>
 <meta name="format-detection" content="email=no"/>
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/></p>
 
-<p><input type="password" name="spwd" autocomplete="off" pattern="\d*"
-    minlength="6" maxlength="6" autofocus /></p>
+<p><input type="password" name="spwd" autocomplete="off"
+    pattern="\d*"
+    minlength="6" maxlength="6" /></p>
 <script>seajs.use('spassword', function(spassword){
 
     new spassword("input[name=spwd]").on("complete", function(value){
-        console.log("complete:", value);
+        var ME = this;
+        window.setTimeout(function(){
+            ME.clear();
+        }, 500);
     }).render();
 
 });
 </script><div class="highlight"><pre><code class="javascript">seajs.use(<span class="string">'arale/spassword/1.0.0/spassword'</span>, <span class="function"><span class="keyword">function</span><span class="params">(spassword)</span>{</span>
 
     <span class="keyword">new</span> spassword(<span class="string">"input[name=spwd]"</span>).on(<span class="string">"complete"</span>, <span class="function"><span class="keyword">function</span><span class="params">(value)</span>{</span>
-        console.log(<span class="string">"complete:"</span>, value);
+        <span class="keyword">var</span> ME = <span class="keyword">this</span>;
+        window.setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+            ME.clear();
+        }, <span class="number">500</span>);
     }).render();
 
 });
 </code></pre></div>
+<hr/>
+
 <p>扫描二维码访问当前页面</p>
 
 <p><img src="example-url.png" alt="二维码"/></p>
