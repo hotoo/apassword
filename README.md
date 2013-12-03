@@ -10,15 +10,19 @@
 
 ## 使用说明
 
+* `maxlength` 定义了密码长度，默认长度为 6。
+* 为了表单校验，建议同时设置 `minlength`。
+* 可以通过 `patterm` 和 `type` 属性控制键盘响应。
+
 ```html
-<input type="password" class="spassword" />
+<input type="password" class="spassword"
+    pattern="\d*"
+    minlength="6" maxlength="6" />
 
 <script>
 seajs.use("spassword", function(spassword){
 
-  var spwd = new spassword("#spwd", {
-    length: 6
-  }).on("complete", function(value){
+  var spwd = new spassword("input.spassword").on("complete", function(value){
     alert(value);
   });
 
@@ -44,15 +48,12 @@ seajs.use("spassword", function(spassword){
 
 让密码控件失去焦点，该行为会隐藏键盘。
 
+
 ## Events
 
 ### complete
 
 指定位数的密码输入完成时，触发 `complete` 事件。
-
-### input
-
-输入过程中触发 `input` 事件。
 
 ### focus
 

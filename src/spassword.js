@@ -7,20 +7,22 @@ define(function(require, exports, module) {
 
   var DEFAULT_LENGTH = 6;
 
-  var spassword = function(passwordElement, options){
+  // constructor
+  //
+  // @param {String} password element selector.
+  var spassword = function(passwordElement){
     this._element = $(passwordElement);
 
-    this._length = parseInt(this._element.attr("maxlength"), 10);
-    if(options && options.length){
-      this._length =  options.length || DEFAULT_LENGTH;
-    }
+    this._length = parseInt(this._element.attr("maxlength"), 10) || DEFAULT_LENGTH;
 
     this._event = new Events();
 
     this._mo;
+
   };
 
   spassword.prototype = {
+    // render security password control on the page.
     render: function(){
       var ME = this;
 
@@ -30,18 +32,17 @@ define(function(require, exports, module) {
           '</div>');
       }
 
-      this._element.parent().css({
-        "position": "relative"
-      });
+      var points = $("b", this._mo);
 
       this._element.css({
         "position": "absolute",
         "left": "-1000px"
         //"top": this._element.css("top")
-      }).on("keyup", function(evt){
+      }).on("keyup", function(){
 
         var len = ME._element.val().length;
-        $("b", this._mo).each(function(index){
+
+        points.each(function(index){
           $(this).css({
             "visibility": index < len ? "visible" : "hidden"
           });
@@ -49,9 +50,7 @@ define(function(require, exports, module) {
 
         var val = ME._element.val();
 
-        ME._event.trigger("input", val);
-
-        if(len == ME._length){
+        if(len === ME._length){
           ME._event.trigger("complete", val);
         }
 
@@ -63,9 +62,7 @@ define(function(require, exports, module) {
         ME._event.trigger("blur");
       }).after(this._mo);
 
-      this._mo.css({
-        "cursor": "text"
-      }).focus(function(){
+      this._mo.focus(function(){
         ME._element.focus();
       }).click(function(){
         ME._element.focus();
@@ -74,19 +71,31 @@ define(function(require, exports, module) {
       return this;
     },
 
+    // event binding.
+    //
+    // @param {String} eventName: now support [`complete`]
+    // @param {Function} handler.
     on: function(eventName, handler){
-      this._event.on(eventName, handler);
+      this._event.on(eventName, handler, this);
       return this;
     },
+    // event unbinding.
+    //
+    // @param {String} eventName: now support [`complete`]
+    // @param {Function} handler.
     off: function(eventName, handler){
       this._event.off(eventName, handler);
       return this;
     },
 
+    // get password value.
+    //
+    // @return {String}
     val: function(){
       return this._element.val();
     },
 
+    // clear password.
     clear: function(){
       this._element.val("");
       $("b", this._mo).css({
