@@ -58,17 +58,7 @@ define(function(require, exports, module) {
         ME._event.trigger("blur");
       }).after(this._mo);
 
-      // 让文本输入框获得焦点。
-      // 同时光标定位到最后。
-      function focusInput(){
-        var len = ME._element.val().length;
-        try{
-          ME._element.focus();
-          ME._element[0].setSelectionRange(len, len);
-        }catch(ex){}
-      }
-
-      this._mo.focus(focusInput).click(focusInput);
+      this._mo.focus(focusInput(ME._element)).click(focusInput(ME._element));
 
       return this;
     },
@@ -107,7 +97,7 @@ define(function(require, exports, module) {
     },
 
     focus: function(){
-      this._element.focus();
+      focusInput(this._element);
       return this;
     },
     blur: function(){
@@ -115,6 +105,18 @@ define(function(require, exports, module) {
       return this;
     }
   };
+
+  // 让文本输入框获得焦点。
+  // 同时光标定位到最后。
+  function focusInput(elem){
+    return function(){
+      var len = elem.val().length;
+      try{
+        elem.focus();
+        elem[0].setSelectionRange(len, len);
+      }catch(ex){}
+    }
+  }
 
   function repeat(string, times){
     return new Array(times + 1).join(string);
