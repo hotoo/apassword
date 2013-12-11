@@ -58,11 +58,17 @@ define(function(require, exports, module) {
         ME._event.trigger("blur");
       }).after(this._mo);
 
-      this._mo.focus(function(){
-        ME._element.focus();
-      }).click(function(){
-        ME._element.focus();
-      });
+      // 让文本输入框获得焦点。
+      // 同时光标定位到最后。
+      function focusInput(){
+        var len = ME._element.val().length;
+        try{
+          ME._element.focus();
+          ME._element[0].setSelectionRange(len, len);
+        }catch(ex){}
+      }
+
+      this._mo.focus(focusInput).click(focusInput);
 
       return this;
     },
