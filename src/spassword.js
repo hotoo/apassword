@@ -1,8 +1,8 @@
 define(function(require, exports, module) {
 
-  require("./spassword.css");
+  //require("./spassword.css");
 
-  var $ = require("zepto");
+  var $ = require("$");
   var Events = require("events");
 
   var DEFAULT_LENGTH = 6;
