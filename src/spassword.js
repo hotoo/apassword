@@ -34,7 +34,17 @@ define(function(require, exports, module) {
 
       var points = $("b", this._mo);
 
-      this._element.addClass("spassword").on("keyup", function(){
+      var cur_val = ME._element.val();
+
+      setInterval(function() {
+        var v = ME._element.val();
+        if (v !== cur_val) {
+          cur_val = v;
+          onchange();
+        }
+      }, 200);
+
+      function onchange(){
 
         var len = ME._element.val().length;
 
@@ -49,8 +59,9 @@ define(function(require, exports, module) {
         if(len === ME._length){
           ME._event.trigger("complete", val);
         }
+      }
 
-      }).on("focus", function(){
+      this._element.addClass("spassword").on("focus", function(){
         ME._mo.addClass("active");
         ME._event.trigger("focus");
       }).on("blur", function(){
