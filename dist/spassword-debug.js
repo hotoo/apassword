@@ -81,7 +81,7 @@ define("arale/spassword/1.0.0/spassword-debug", [ "$-debug", "arale/events/1.1.0
             return this;
         },
         focus: function() {
-            focusInput(this._element);
+            focusInput(this._element)();
             return this;
         },
         blur: function() {
