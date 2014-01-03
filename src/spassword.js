@@ -108,7 +108,7 @@ define(function(require, exports, module) {
     },
 
     focus: function(){
-      focusInput(this._element);
+      focusInput(this._element)();
       return this;
     },
     blur: function(){
