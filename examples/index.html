@@ -2,7 +2,7 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8">
-    <title>arale/spassword - 演示文档</title>
+    <title>alipay/spassword - 演示文档</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="nico 0.5.0" />
     <link type="image/x-icon" href="../static/css/favicon.ico" rel="icon">
@@ -42,6 +42,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
   if (contain(query, 'dist')) {
     srcdir = 'dist';
     
+      seajs.use("../dist/spassword.js");
   } else if (contain(query, 'cov')) {
     srcdir = 'src-cov';
   }
@@ -58,7 +59,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
     },
     map: [function(uri) {
       // resolve id
-      var m = uri.match(/arale\/spassword\/1.0.0\/(.*)/);
+      var m = uri.match(/alipay\/spassword\/1.0.0\/(.*)/);
       if (m) {
         return resolve(m[1]);
       }
@@ -125,9 +126,9 @@ jquery/jquery/1.7.2/jquery.js"></script>
     <div id="body-wrapper">
       <aside id="sidebar-wrapper">
       <h1>
-          <a href="../">Spassword</a><sup class="package-root"><a href="/">arale</a></sup>
+          <a href="../">Spassword</a><sup class="package-root"><a href="/">alipay</a></sup>
       </h1>
-        <p class="version">当前版本：<a href="http://aralejs.org/docs/online-status.html#arale-spassword" title="点击查看此组件发布情况">1.0.0</a></p>
+        <p class="version">当前版本：<a href="http://aralejs.org/docs/online-status.html#alipay-spassword" title="点击查看此组件发布情况">1.0.0</a></p>
         <p class="description">Alipay security password module.</p>
         <a class="source" href="https://github.com/hotoo/spassword.git" target="_blank">View the Project</a>
         <ul id="navigation" role="navigation">
@@ -138,7 +139,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
         </ul>
         
 <div id="output-card">
-    <h3>arale/spassword/1.0.0/<a target="_blank" id="output-file"></a></h3>
+    <h3>alipay/spassword/1.0.0/<a target="_blank" id="output-file"></a></h3>
     <p>这是模块的输出文件，请 require 或 seajs.use 以上 ID 来使用本文件，样式文件请自行 link。</p>
 </div>
 
@@ -165,7 +166,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
     }).render();
 
 });
-</script><div class="highlight"><pre><code class="javascript">seajs.use(<span class="string">'arale/spassword/1.0.0/spassword'</span>, <span class="function"><span class="keyword">function</span><span class="params">(spassword)</span>{</span>
+</script><div class="highlight"><pre><code class="javascript">seajs.use(<span class="string">'alipay/spassword/1.0.0/spassword'</span>, <span class="function"><span class="keyword">function</span><span class="params">(spassword)</span>{</span>
 
     <span class="keyword">new</span> spassword(<span class="string">"input[name=spwd]"</span>).on(<span class="string">"complete"</span>, <span class="function"><span class="keyword">function</span><span class="params">(value)</span>{</span>
         <span class="keyword">var</span> ME = <span class="keyword">this</span>;

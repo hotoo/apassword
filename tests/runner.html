@@ -40,6 +40,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
   if (contain(query, 'dist')) {
     srcdir = 'dist';
     
+      seajs.use("../dist/spassword.js");
   } else if (contain(query, 'cov')) {
     srcdir = 'src-cov';
   }
@@ -56,7 +57,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
     },
     map: [function(uri) {
       // resolve id
-      var m = uri.match(/arale\/spassword\/1.0.0\/(.*)/);
+      var m = uri.match(/alipay\/spassword\/1.0.0\/(.*)/);
       if (m) {
         return resolve(m[1]);
       }
