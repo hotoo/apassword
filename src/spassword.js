@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
 
-  //require("./spassword.css");
+  require("./spassword.css");
 
   var $ = require("$");
   var Events = require("events");
@@ -97,7 +97,7 @@ define(function(require, exports, module) {
     },
 
     focus: function(){
-      focusInput(this._element);
+      focusInput(this._element)();
       return this;
     },
     blur: function(){
