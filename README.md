@@ -24,7 +24,7 @@ seajs.use("spassword", function(spassword){
 
   var spwd = new spassword("input.spassword").on("complete", function(value){
     alert(value);
-  });
+  }).render();
 
 });
 </script>
