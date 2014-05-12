@@ -57,7 +57,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
     },
     map: [function(uri) {
       // resolve id
-      var m = uri.match(/alipay\/spassword\/1.0.0\/(.*)/);
+      var m = uri.match(/alipay\/spassword\/1.1.0\/(.*)/);
       if (m) {
         return resolve(m[1]);
       }
@@ -114,11 +114,12 @@ jquery/jquery/1.7.2/jquery.js"></script>
     seajs.use(cssArray);
   })();
 </script>
+    <!--<script src="/src/seajs-gettext.js"></script>-->
     <script src="http://assets.spmjs.org/gallery/mocha/1.9.0/mocha.js"></script>
     <script src="http://assets.spmjs.org/gallery/sinon/1.6.0/sinon.js"></script>
     <!--[if lte IE 8]>
     <script src="http://assets.spmjs.org/gallery/sinon/1.6.0/sinon-ie.js"></script>
-    <![endif]--> 
+    <![endif]-->
     <div id="mocha"></div>
     <script>
       (function() {

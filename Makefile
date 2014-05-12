@@ -1,4 +1,5 @@
 THEME = $(HOME)/.spm/themes/arale
+version = $(shell cat package.json | grep version | awk -F'"' '{print $$4}')
 
 build-doc:
 	@nico build -C $(THEME)/nico.js
@@ -7,6 +8,15 @@ publish-doc: clean build-doc
 	@ghp-import _site
 	@git push origin gh-pages
 	#@spm publish --doc _site -s spmjs
+
+build:
+	@spm build
+
+publish: build
+	@spm publish -s spmjs
+	@git tag $(version)
+	@git push origin $(version)
+	@make publish-doc
 
 server:
 	@nico server -C $(THEME)/nico.js

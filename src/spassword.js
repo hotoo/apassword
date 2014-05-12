@@ -34,7 +34,7 @@ define(function(require, exports, module) {
 
       var points = $("b", this._mo);
 
-      this._element.addClass("spassword").on("keyup", function(){
+      this._element.addClass("spassword").on("keyup input paste", function(){
 
         var len = ME._element.val().length;
 
@@ -71,6 +71,7 @@ define(function(require, exports, module) {
       this._event.on(eventName, handler, this);
       return this;
     },
+
     // event unbinding.
     //
     // @param {String} eventName: now support [`complete`]

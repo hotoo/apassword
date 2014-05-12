@@ -1,7 +1,7 @@
 {
   "family": "alipay",
   "name": "spassword",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Alipay security password module.",
   "homepage": "https://github.com/hotoo/spassword",
   "author": "闲耘<hotoo.cn@gmail.com>",

@@ -59,7 +59,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
     },
     map: [function(uri) {
       // resolve id
-      var m = uri.match(/alipay\/spassword\/1.0.0\/(.*)/);
+      var m = uri.match(/alipay\/spassword\/1.1.0\/(.*)/);
       if (m) {
         return resolve(m[1]);
       }
@@ -128,7 +128,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
       <h1>
           <a href="./">Spassword</a><sup class="package-root"><a href="/">alipay</a></sup>
       </h1>
-        <p class="version">当前版本：<a href="http://aralejs.org/docs/online-status.html#alipay-spassword" title="点击查看此组件发布情况">1.0.0</a></p>
+        <p class="version">当前版本：<a href="http://aralejs.org/docs/online-status.html#alipay-spassword" title="点击查看此组件发布情况">1.1.0</a></p>
         <p class="description">Alipay security password module.</p>
         <a class="source" href="https://github.com/hotoo/spassword.git" target="_blank">View the Project</a>
         <ul id="navigation" role="navigation">
@@ -139,7 +139,7 @@ jquery/jquery/1.7.2/jquery.js"></script>
         </ul>
         
 <div id="output-card">
-    <h3>alipay/spassword/1.0.0/<a target="_blank" id="output-file"></a></h3>
+    <h3>alipay/spassword/1.1.0/<a target="_blank" id="output-file"></a></h3>
     <p>这是模块的输出文件，请 require 或 seajs.use 以上 ID 来使用本文件，样式文件请自行 link。</p>
 </div>
 
@@ -150,12 +150,9 @@ jquery/jquery/1.7.2/jquery.js"></script>
   <h1 class="entry-title">spassword</h1>
   <div class="entry-content">
     <p>支付宝无线端密码组件。</p>
-
-<p><img src="snipshot.png" alt="snipshot"/></p>
-
-<hr/>
-<h2 id="使用说明">使用说明<a href="#使用说明" class="anchor">¶</a></h2>
-<ul>
+<p><img src="snipshot.png" alt="snipshot"></p>
+<hr>
+<h2 id="使用说明">使用说明<a href="#使用说明" class="anchor">¶</a></h2><ul>
 <li><code>maxlength</code> 定义了密码长度，默认长度为 6。</li>
 <li>为了表单校验，建议同时设置 <code>minlength</code>。</li>
 <li>可以通过 <code>patterm</code> 和 <code>type</code> 属性控制键盘响应。</li>
@@ -165,30 +162,21 @@ jquery/jquery/1.7.2/jquery.js"></script>
     <span class="attribute">minlength</span>=<span class="value">"6"</span> <span class="attribute">maxlength</span>=<span class="value">"6"</span> /&gt;</span>
 
 <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-seajs.use(<span class="string">"alipay/spassword/1.0.0/spassword"</span>, <span class="function"><span class="keyword">function</span><span class="params">(spassword)</span>{</span>
+seajs.use(<span class="string">"alipay/spassword/1.1.0/spassword"</span>, <span class="function"><span class="keyword">function</span><span class="params">(spassword)</span>{</span>
 
   <span class="keyword">var</span> spwd = <span class="keyword">new</span> spassword(<span class="string">"input.spassword"</span>).on(<span class="string">"complete"</span>, <span class="function"><span class="keyword">function</span><span class="params">(value)</span>{</span>
     alert(value);
-  });
+  }).render();
 
 });
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-</code></pre></div><h2 id="api">API<a href="#api" class="anchor">¶</a></h2><h3 id="val">val()<a href="#val" class="anchor">¶</a></h3>
-<p>获取密码。</p>
-<h3 id="clear">clear()<a href="#clear" class="anchor">¶</a></h3>
-<p>清空密码。</p>
-<h3 id="focus">focus()<a href="#focus" class="anchor">¶</a></h3>
-<p>让密码控件获得焦点，该行为会激活显示键盘。</p>
-<h3 id="blur">blur()<a href="#blur" class="anchor">¶</a></h3>
-<p>让密码控件失去焦点，该行为会隐藏键盘。</p>
-<h2 id="events">Events<a href="#events" class="anchor">¶</a></h2><h3 id="complete">complete<a href="#complete" class="anchor">¶</a></h3>
-<p>指定位数的密码输入完成时，触发 <code>complete</code> 事件。</p>
-<h3 id="focus">focus<a href="#focus" class="anchor">¶</a></h3>
-<p>密码控件活动焦点时触发 <code>focus</code> 事件。</p>
-<h3 id="blur">blur<a href="#blur" class="anchor">¶</a></h3>
-<p>密码控件失去焦点时触发 <code>blur</code> 事件。</p>
-<h2 id="参考">参考<a href="#参考" class="anchor">¶</a></h2>
-<ul>
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></pre></div><h2 id="api">API<a href="#api" class="anchor">¶</a></h2><h3 id="val">val()<a href="#val" class="anchor">¶</a></h3><p>获取密码。</p>
+<h3 id="clear">clear()<a href="#clear" class="anchor">¶</a></h3><p>清空密码。</p>
+<h3 id="focus">focus()<a href="#focus" class="anchor">¶</a></h3><p>让密码控件获得焦点，该行为会激活显示键盘。</p>
+<h3 id="blur">blur()<a href="#blur" class="anchor">¶</a></h3><p>让密码控件失去焦点，该行为会隐藏键盘。</p>
+<h2 id="events">Events<a href="#events" class="anchor">¶</a></h2><h3 id="complete">complete<a href="#complete" class="anchor">¶</a></h3><p>指定位数的密码输入完成时，触发 <code>complete</code> 事件。</p>
+<h3 id="focus">focus<a href="#focus" class="anchor">¶</a></h3><p>密码控件活动焦点时触发 <code>focus</code> 事件。</p>
+<h3 id="blur">blur<a href="#blur" class="anchor">¶</a></h3><p>密码控件失去焦点时触发 <code>blur</code> 事件。</p>
+<h2 id="参考">参考<a href="#参考" class="anchor">¶</a></h2><ul>
 <li><a href="http://sja.co.uk/2012/1/4/controlling-which-ios-keyboard-is-shown">Controlling which iOS keyboard is shown</a></li>
 <li><a href="https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html">Managing the Keyboard</a></li>
 </ul>
