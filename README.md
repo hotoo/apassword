@@ -2,6 +2,10 @@
 
 ---
 
+[![spm package](http://spmjs.io/badge/spassword)](http://spmjs.io/package/spassword)
+[![Build Status](https://secure.travis-ci.org/hotoo/spassword.png?branch=master)](https://travis-ci.org/hotoo/spassword)
+[![Coverage Status](https://coveralls.io/repos/hotoo/spassword/badge.png?branch=master)](https://coveralls.io/r/hotoo/spassword)
+
 支付宝无线端密码组件。
 
 ![snipshot](snipshot.png)

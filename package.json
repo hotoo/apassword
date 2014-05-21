@@ -1,8 +1,7 @@
 {
-  "family": "alipay",
   "name": "spassword",
-  "version": "1.1.0",
-  "description": "Alipay security password module.",
+  "version": "1.2.0",
+  "description": "Alipay mobile security password module.",
   "homepage": "https://github.com/hotoo/spassword",
   "author": "闲耘<hotoo.cn@gmail.com>",
   "repository": {
@@ -12,16 +11,17 @@
   "bugs": {
     "url": "https://github.com/hotoo/spassword/issues"
   },
-  "keywords": ["widget"],
+  "keywords": ["widget", "password", "mobile"],
   "licenses": "MIT",
   "spm": {
-    "output": ["spassword.js"],
-    "alias": {
-      "jquto": "handy/jquto/1.0.0/jquto",
-      "zepto": "zepto/zepto/1.0.0/zepto",
-      "events": "arale/events/1.1.0/events"
+    "main": "spassword.js",
+    "dependencies": {
+      "anima-zepto": "1.0.0",
+      "arale-events": "1.2.0"
     },
-    "devAlias": {},
-    "engines": {}
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    },
+    "tests": "tests/*-spec.js"
   }
 }
