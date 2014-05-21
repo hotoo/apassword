@@ -1,0 +1,22 @@
+{
+  "name": "anima-zepto",
+  "version": "1.0.0",
+  "description": "the core of zepto.js",
+  "homepage": "http://gitlab.alibaba-inc.com/animajs/zepto-core",
+  "author": "wanyan.wz@taobao.com",
+  "maintainers": [
+    "wanyan.wz@taobao.com"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://gitlab.alibaba-inc.com/animajs/zepto-core.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [],
+  "licenses": "MIT",
+  "spm": {
+    "main": "index.js"
+  }
+}
