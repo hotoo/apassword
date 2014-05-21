@@ -1,3 +1,4 @@
+
 # 演示文档
 
 ---
@@ -12,7 +13,7 @@
 
 
 ````javascript
-seajs.use('spassword', function(spassword){
+seajs.use('../spassword', function(spassword){
 
     new spassword("input[name=spwd]").on("complete", function(value){
         var ME = this;
