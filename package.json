@@ -1,7 +1,7 @@
 {
   "name": "spassword",
   "version": "1.2.0",
-  "description": "Alipay mobile security password module.",
+  "description": "mobile security password module.",
   "homepage": "https://github.com/hotoo/spassword",
   "author": "闲耘<hotoo.cn@gmail.com>",
   "repository": {
