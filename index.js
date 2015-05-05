@@ -1,7 +1,5 @@
 
-require("./spassword.css");
-
-var $ = require("anima-zepto");
+var $ = require("zepto");
 var Events = require("arale-events");
 
 var DEFAULT_LENGTH = 6;
@@ -9,7 +7,7 @@ var DEFAULT_LENGTH = 6;
 // constructor
 //
 // @param {String} password element selector.
-var spassword = function(passwordElement){
+var apassword = function(passwordElement){
   this._element = $(passwordElement);
 
   this._length = parseInt(this._element.attr("maxlength"), 10) || DEFAULT_LENGTH;
@@ -20,20 +18,20 @@ var spassword = function(passwordElement){
 
 };
 
-spassword.prototype = {
+apassword.prototype = {
   // render security password control on the page.
   render: function(){
     var ME = this;
 
     if(!this._mo){
-      this._mo = $('<div class="spassword" tabIndex="0">' +
+      this._mo = $('<div class="apassword" tabIndex="0">' +
         repeat('<i><b></b></i>', this._length) +
         '</div>');
     }
 
     var points = $("b", this._mo);
 
-    this._element.addClass("spassword").on("keyup input paste", function(){
+    this._element.addClass("apassword").on("keyup input paste", function(){
 
       var len = ME._element.val().length;
 
@@ -122,4 +120,4 @@ function repeat(string, times){
   return new Array(times + 1).join(string);
 }
 
-module.exports = spassword;
+module.exports = apassword;

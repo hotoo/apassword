@@ -1,10 +1,11 @@
-# spassword
+# apassword
 
 ---
 
-[![spm package](http://spmjs.io/badge/spassword)](http://spmjs.io/package/spassword)
-[![Build Status](https://secure.travis-ci.org/hotoo/spassword.png?branch=master)](https://travis-ci.org/hotoo/spassword)
-[![Coverage Status](https://coveralls.io/repos/hotoo/spassword/badge.png?branch=master)](https://coveralls.io/r/hotoo/spassword)
+[![NPM version](https://badge.fury.io/js/apassword.png)](http://badge.fury.io/js/apassword)
+[![spm package](http://spmjs.io/badge/apassword)](http://spmjs.io/package/apassword)
+[![Build Status](https://secure.travis-ci.org/hotoo/apassword.png?branch=master)](https://travis-ci.org/hotoo/apassword)
+[![Coverage Status](https://coveralls.io/repos/hotoo/apassword/badge.png?branch=master)](https://coveralls.io/r/hotoo/apassword)
 
 移动端密码控件。
 
@@ -19,18 +20,20 @@
 * 可以通过 `patterm` 和 `type` 属性控制键盘响应。
 
 ```html
-<input type="password" class="spassword"
+<input type="password" class="apassword"
     pattern="\d*"
     minlength="6" maxlength="6" />
+```
 
-<script>
-seajs.use("spassword", function(spassword){
+```js
+var APassword = require('apassword');
 
-  var spwd = new spassword("input.spassword").on("complete", function(value){
+new APassword("input.apassword")
+  .on("complete", function(value){
+
     alert(value);
-  }).render();
 
-});
+}).render();
 </script>
 ```
 
