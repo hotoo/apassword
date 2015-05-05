@@ -2,56 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>spassword - 演示文档</title>
+    <title>apassword - 演示文档</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="nico 0.5.0" />
+    <meta name="generator" content="nico-spm 0.5.3" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link type="image/x-icon" href="../static/css/favicon.ico" rel="icon">
+    <link type="image/x-icon" href="/favicon.ico" rel="icon">
     <link rel="stylesheet" href="../static/css/normalize.css" />
     <link rel="stylesheet" href="../static/css/site.css" />
+    <link rel="stylesheet" href="../static/css/site.css" />
     <link rel="stylesheet" href="../static/css/solarized.css" />
+    <link rel="stylesheet" href="../static/css/codemirror.css" />
 <script>
+if (!location.port) {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-50522089-2', 'spm documentation');
+  ga('create', 'UA-50522089-2', 'auto');
   ga('send', 'pageview');
+}
 </script>
-<script src="http://static.alipayobjects.com/??seajs/seajs/2.2.0/sea.js,seajs/seajs-text/1.0.2/seajs-text.js"></script>
+<script src="../static/js/sea.js?nowrap"></script>
 
 <script>
-  (function() {
   seajs.config({
     base: "../"
   });
-
-  seajs.config({
-    alias: {"anima-zepto":"sea-modules/anima-zepto/1.0.0/index.js","arale-events":"sea-modules/arale-events/1.2.0/events.js","expect.js":"sea-modules/expect.js/0.3.1/index.js"}
-  });
-})();
 </script>
     <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.js"></script>
     <![endif]-->
   </head>
   <body class="spmjs">
-    <div class="body-wrapper">
+  <script src="../dist/bundle.js?nowrap"></script>
+
+  <div class="body-wrapper">
       <aside class="sidebar-wrapper">
       <h1>
-          <a href="../">Spassword</a>
+          <a href="../">Apassword</a>
       </h1>
-        <p class="sidebar-version">Version: <a href="http://spmjs.io/package/spassword" title="">1.2.0</a></p>
-        <p class="sidebar-description" data-keyword="widget">Alipay mobile security password module.</p>
-        <a class="sidebar-source" href="https://github.com/hotoo/spassword" target="_blank">View the Project</a>
+      <p class="sidebar-version">Version: <a href="http://spmjs.io/package/apassword" title="">2.0.0</a></p>
+        <p class="sidebar-description" data-keyword="widget">A password ui control module.</p>
+        <a class="sidebar-source" href="https://github.com/hotoo/apassword" target="_blank">View the Project</a>
         <ul class="sidebar-navigation" role="navigation">
           <li><a href="../">Doc</a></li>
           <li><a href="index.html">Demo</a></li>
           <li><a class="test-link" href="../tests/runner.html" target="_blank">Test</a></li>
-          <li><a class="issue-link" href="https://github.com/hotoo/spassword/issues" target="_blank">Issues</a></li>
+          <li><a class="issue-link" href="https://github.com/hotoo/apassword/issues" target="_blank">Issues</a></li>
         </ul>
         
 
+        <div class="qrcode-wrapper">
+          <i class="icon">
+            <div class="icon-qrcode">
+              <svg width="1024" height="1024" viewBox="0 0 1024 1024">
+                <g class="transform-group">
+                  <g transform="translate(0, 18) scale(1, -1) scale(0.024, 0.024)">
+                    <path d="M116.8 792.062v0 0zM334.523 138.877v-72.569h-72.569v72.569h72.569zM334.523 574.339v-72.569h-72.569v72.569h72.569zM769.984 574.339v-72.569h-72.569v72.569h72.569zM189.369-5.705h217.723v217.167h-217.723v-217.167zM189.369 429.185h217.723v217.723h-217.723v-217.723zM624.831 429.185h217.723v217.723h-217.723v-217.723zM479.677 284.031v-362.877h-362.877v362.877h362.877zM769.984-6.277v-72.569h-72.569v72.569h72.569zM915.138-6.277v-72.569h-72.569v72.569h72.569zM915.138 284.031v-217.723h-217.723v72.569h-72.569v-217.723h-72.569v362.877h217.723v-72.569h72.569v72.569h72.569zM479.677 719.493v-362.877h-362.877v362.877h362.877zM915.138 719.493v-362.877h-362.877v362.877h362.877z" fill="#666"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="qrcode" id="qrcode"></div>
+          </i>
+        </div>
+        <div class="footer-wrapper"><a target="_blank" href="http://spmjs.io">spmjs.io</a> /
+<a target="_blank" href="https://github.com/spmjs/spm">spm</a> /
+<a target="_blank" href="http://seajs.org">sea.js</a> /
+<a target="_blank" href="http://lab.lepture.com/nico/">nico-spm</a>
+        </div>
       </aside>
       <div class="content-wrapper">
         
@@ -62,30 +81,47 @@
 <p><meta name="format-detection" content="email=no"/></p>
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
 
+<div class="nico-insert-code"><link type="text/css" rel="stylesheet" href="../index.css" />
+
 <input type="tel" name="spwd" autocomplete="off"
     pattern="[0-9]*"
-    minlength="6" maxlength="6" />
+    minlength="6" maxlength="6" /></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"../index.css"</span> /&gt;</span>
 
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"tel"</span> <span class="attribute">name</span>=<span class="value">"spwd"</span> <span class="attribute">autocomplete</span>=<span class="value">"off"</span>
+    <span class="attribute">pattern</span>=<span class="value">"[0-9]*"</span>
+    <span class="attribute">minlength</span>=<span class="value">"6"</span> <span class="attribute">maxlength</span>=<span class="value">"6"</span> /&gt;</span></code></pre></div><script class="nico-insert-code">(function() {
+var APassword = window['../']
 
-<script>seajs.use('../spassword', function(spassword){
+new APassword("input[name=spwd]")
+  .on("complete", function(value){
 
-    new spassword("input[name=spwd]").on("complete", function(value){
-        var ME = this;
-        window.setTimeout(function(){
-            ME.clear();
-        }, 500);
-    }).render();
+    var ME = this;
+    window.setTimeout(function(){
+        ME.clear();
+    }, 500);
 
-});</script><div class="highlight"><pre><code class="javascript">seajs.use(<span class="string">'../spassword'</span>, <span class="function"><span class="keyword">function</span><span class="params">(spassword)</span>{</span>
+}).render();
+})();</script><textarea mode="javascript" class="spm-doc-textarea">var APassword = require('../')
 
-    <span class="keyword">new</span> spassword(<span class="string">"input[name=spwd]"</span>).on(<span class="string">"complete"</span>, <span class="function"><span class="keyword">function</span><span class="params">(value)</span>{</span>
-        <span class="keyword">var</span> ME = <span class="keyword">this</span>;
-        window.setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-            ME.clear();
-        }, <span class="number">500</span>);
-    }).render();
+new APassword("input[name=spwd]")
+  .on("complete", function(value){
 
-});</code></pre></div><hr>
+    var ME = this;
+    window.setTimeout(function(){
+        ME.clear();
+    }, 500);
+
+}).render();</textarea><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> APassword = require(<span class="string">'../'</span>)
+
+<span class="keyword">new</span> APassword(<span class="string">"input[name=spwd]"</span>)
+  .on(<span class="string">"complete"</span>, <span class="function"><span class="keyword">function</span><span class="params">(value)</span>{</span>
+
+    <span class="keyword">var</span> ME = <span class="keyword">this</span>;
+    window.setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+        ME.clear();
+    }, <span class="number">500</span>);
+
+}).render();</code></pre></div><hr>
 <p>扫描二维码访问当前页面</p>
 <p><img src="example-url.png" alt="二维码"></p>
 
@@ -95,14 +131,36 @@
       </div>
       
     </div>
-    <div class="footer-wrapper">
-      <footer>
-        <p class="footer-powered"><a href="http://spmjs.io">spmjs.io</a> •
-<a href="https://github.com/spmjs/spm">spm</a> •
-<a href="http://seajs.org">Sea.js</a> •
-<a href="http://lab.lepture.com/nico/">nico</a>
-        </p>
-      </footer>
-    </div>
   </body>
+  <script src="../static/js/nprogress.js?nowrap"></script>
+  <script>
+  (function() {
+    NProgress.start();
+    window.onload = NProgress.done;
+    var ready = function(fn) {
+      var doc = document;
+      if(doc.addEventListener) {
+        doc.addEventListener('DOMContentLoaded', fn, false);
+      } else {
+        doc.attachEvent('onreadystatechange', fn);
+      }
+    };
+    ready(function() {
+      NProgress.inc(0.6);
+      seajs.use("../static/js/arale-qrcode.js?nowrap", function(QRCode) {
+        var url = location.href;
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+          url = url.replace(location.hostname, '192.168.0.108');
+        }
+        var el = new QRCode({
+          text: url,
+          render: 'canvas',
+          width: 120,
+          height: 120
+        });
+        document.getElementById('qrcode').appendChild(el);
+      });
+    }, false);
+  })();
+  </script>
 </html>

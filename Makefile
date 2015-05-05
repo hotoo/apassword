@@ -16,6 +16,7 @@ build:
 
 publish: publish-doc
 	@spm publish
+	@npm publish
 	@git tag $(version)
 	@git push origin $(version)
 
