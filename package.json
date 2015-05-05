@@ -1,22 +1,26 @@
 {
-  "name": "spassword",
-  "version": "1.2.0",
-  "description": "mobile security password module.",
-  "homepage": "https://github.com/hotoo/spassword",
+  "name": "apassword",
+  "version": "2.0.0",
+  "description": "A password ui control module.",
+  "homepage": "https://github.com/hotoo/apassword",
   "author": "闲耘<hotoo.cn@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hotoo/spassword.git"
+    "url": "https://github.com/hotoo/apassword.git"
   },
   "bugs": {
-    "url": "https://github.com/hotoo/spassword/issues"
+    "url": "https://github.com/hotoo/apassword/issues"
   },
-  "keywords": ["widget", "password", "mobile"],
+  "keywords": [
+    "widget",
+    "password",
+    "mobile"
+  ],
   "licenses": "MIT",
   "spm": {
-    "main": "spassword.js",
+    "main": "index.js",
     "dependencies": {
-      "anima-zepto": "1.0.0",
+      "zepto": "~1.1.3",
       "arale-events": "1.2.0"
     },
     "devDependencies": {

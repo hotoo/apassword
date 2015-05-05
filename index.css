@@ -1,4 +1,4 @@
-input.spassword {
+input.apassword {
   position: absolute;
   color: #fff;
   opacity: 0;
@@ -11,7 +11,7 @@ input.spassword {
   -webkit-user-select:initial; /* 取消禁用选择页面元素 */
 }
 
-div.spassword {
+div.apassword {
   display: -webkit-box;
   border: 1px solid #666666;
   -webkit-border-radius: 4px;
@@ -23,7 +23,7 @@ div.spassword {
   background:#fff;
 }
 
-div.spassword.active {
+div.apassword.active {
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
   outline: thin dotted \9;
@@ -32,17 +32,17 @@ div.spassword.active {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
 }
 
-div.spassword i {
+div.apassword i {
   display: block;
   -webkit-box-flex: 1;
   background: none;
   padding: 15px 0;
 }
-div.spassword  i:nth-child(n+2) {
+div.apassword  i:nth-child(n+2) {
   border-left: 1px solid #cccccc;
 }
 
-div.spassword b {
+div.apassword b {
   display: block;
   margin: 0 auto;
   width: 10px;

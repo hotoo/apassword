@@ -7,22 +7,26 @@
 <meta name="format-detection" content="email=no"/>
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
 
+````html
+<link type="text/css" rel="stylesheet" href="../index.css" />
+
 <input type="tel" name="spwd" autocomplete="off"
     pattern="[0-9]*"
     minlength="6" maxlength="6" />
-
+````
 
 ````javascript
-seajs.use('../spassword', function(spassword){
+var APassword = require('../')
 
-    new spassword("input[name=spwd]").on("complete", function(value){
-        var ME = this;
-        window.setTimeout(function(){
-            ME.clear();
-        }, 500);
-    }).render();
+new APassword("input[name=spwd]")
+  .on("complete", function(value){
 
-});
+    var ME = this;
+    window.setTimeout(function(){
+        ME.clear();
+    }, 500);
+
+}).render();
 ````
 
 ----

@@ -1,9 +1,9 @@
 define(function(require) {
 
-  var spassword = require('../spassword');
+  var apassword = require('../');
 
   // TODO: test cases.
-  describe('spassword', function() {
+  describe('apassword', function() {
 
     it('normal usage', function() {
 
