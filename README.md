@@ -2,6 +2,7 @@
 
 ---
 
+[![NPM version](https://badge.fury.io/js/apassword.png)](http://badge.fury.io/js/apassword)
 [![spm package](http://spmjs.io/badge/apassword)](http://spmjs.io/package/apassword)
 [![Build Status](https://secure.travis-ci.org/hotoo/apassword.png?branch=master)](https://travis-ci.org/hotoo/apassword)
 [![Coverage Status](https://coveralls.io/repos/hotoo/apassword/badge.png?branch=master)](https://coveralls.io/r/hotoo/apassword)
