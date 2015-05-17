@@ -15,10 +15,10 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">apassword/index.js</span></h1>
     <h2>
-        Statements: <span class="metric">17.02% <small>(8 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">15.38% <small>(8 / 52)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">0% <small>(0 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">17.02% <small>(8 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">15.38% <small>(8 / 52)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">apassword/</a> &#187; index.js</div>
@@ -149,7 +149,18 @@
 122
 123
 124
-125</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,6 +193,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -282,7 +304,7 @@ var DEFAULT_LENGTH = 6;
 // constructor
 //
 // @param {String} password element selector.
-var spassword = <span class="fstat-no" title="function not covered" >function(passwordElement){</span>
+var apassword = <span class="fstat-no" title="function not covered" >function(passwordElement){</span>
 <span class="cstat-no" title="statement not covered" >  this._element = $(passwordElement);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  this._length = parseInt(this._element.attr("maxlength"), 10) || DEFAULT_LENGTH;</span>
@@ -293,22 +315,33 @@ var spassword = <span class="fstat-no" title="function not covered" >function(pa
 &nbsp;
 };
 &nbsp;
-spassword.prototype = {
+apassword.prototype = {
   // render security password control on the page.
   render: <span class="fstat-no" title="function not covered" >function(){</span>
 <span class="cstat-no" title="statement not covered" >    var ME = this;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if(!this._mo){</span>
-<span class="cstat-no" title="statement not covered" >      this._mo = $('&lt;div class="spassword" tabIndex="0"&gt;' +</span>
+<span class="cstat-no" title="statement not covered" >      this._mo = $('&lt;div class="apassword" tabIndex="0"&gt;' +</span>
         repeat('&lt;i&gt;&lt;b&gt;&lt;/b&gt;&lt;/i&gt;', this._length) +
         '&lt;/div&gt;');
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    var points = $("b", this._mo);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this._element.addClass("spassword").on("keyup input paste", <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >    this._input_string = '';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var len = ME._element.val().length;</span>
+<span class="cstat-no" title="statement not covered" >    this._element.addClass("apassword").on("keyup input paste", <span class="fstat-no" title="function not covered" >function(){</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var val = ME._element.val();</span>
+<span class="cstat-no" title="statement not covered" >      var len = val.length;</span>
+&nbsp;
+      // 忽略重复执行的事件。
+      // 对于相同的输入，无论是 keyup, input 还是 paste 事件触发都一样。
+      // 对于同时支持多种事件的浏览器，忽略后面的事件。
+<span class="cstat-no" title="statement not covered" >      if (ME._input_string === val) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      ME._input_string = val;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      points.each(<span class="fstat-no" title="function not covered" >function(index){</span></span>
 <span class="cstat-no" title="statement not covered" >        $(this).css({</span>
@@ -395,14 +428,14 @@ spassword.prototype = {
 <span class="cstat-no" title="statement not covered" >  return new Array(times + 1).join(string);</span>
 }
 &nbsp;
-module.exports = spassword;
+module.exports = apassword;
 &nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 05 2015 21:29:08 GMT+0800 (CST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun May 17 2015 17:17:02 GMT+0800 (CST)</div>
 </div>
 <script src="../prettify.js"></script>
 <script>

@@ -41,7 +41,7 @@ if (!location.port) {
       <h1>
           <a href="./">Apassword</a>
       </h1>
-      <p class="sidebar-version">Version: <a href="http://spmjs.io/package/apassword" title="">2.0.0</a></p>
+      <p class="sidebar-version">Version: <a href="http://spmjs.io/package/apassword" title="">2.0.1</a></p>
         <p class="sidebar-description" data-keyword="widget">A password ui control module.</p>
         <a class="sidebar-source" href="https://github.com/hotoo/apassword" target="_blank">View the Project</a>
         <ul class="sidebar-navigation" role="navigation">
@@ -136,7 +136,7 @@ if (!location.port) {
       seajs.use("./static/js/arale-qrcode.js?nowrap", function(QRCode) {
         var url = location.href;
         if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-          url = url.replace(location.hostname, '192.168.0.108');
+          url = url.replace(location.hostname, '10.22.25.194');
         }
         var el = new QRCode({
           text: url,
