@@ -31,9 +31,20 @@ apassword.prototype = {
 
     var points = $("b", this._mo);
 
+    this._input_string = '';
+
     this._element.addClass("apassword").on("keyup input paste", function(){
 
-      var len = ME._element.val().length;
+      var val = ME._element.val();
+      var len = val.length;
+
+      // 忽略重复执行的事件。
+      // 对于相同的输入，无论是 keyup, input 还是 paste 事件触发都一样。
+      // 对于同时支持多种事件的浏览器，忽略后面的事件。
+      if (ME._input_string === val) {
+        return;
+      }
+      ME._input_string = val;
 
       points.each(function(index){
         $(this).css({
